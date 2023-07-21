@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">테스트8_9_2</string>
+    <string name="app_mainTitle">Welcome to mobile project</string>
+    <string name="app_footCompanyHead">modern company</string>
+    <string name="app_footCompanyAddress">busanjingu finance building 4F</string>
+</resources>
