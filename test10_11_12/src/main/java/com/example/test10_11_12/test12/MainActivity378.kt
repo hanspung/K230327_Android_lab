@@ -13,8 +13,10 @@ import androidx.core.view.ViewCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.test10_11_12.R
+import com.example.test10_11_12.adapter.MyAdapter
 import com.example.test10_11_12.databinding.ActivityMain378Binding
-import com.example.test10_11_12.databinding.ItemRecyclerviewBinding
+import com.example.test10_11_12.test11.Recycle2Activity
+
 
 
 //복붙 후 컴파일러 에러 부분
@@ -30,58 +32,14 @@ class MainActivity378 : AppCompatActivity() {
         setSupportActionBar(binding.toolbar)
 
         val datas = mutableListOf<String>()
-        for(i in 1..20){
+        for (i in 1..20) {
             datas.add("Item $i")
         }
 
         val layoutManager = LinearLayoutManager(this)
-        binding.recyclerview.layoutManager=layoutManager
-        val adapter= MyAdapter(datas)
-        binding.recyclerview.adapter=adapter
-        binding.recyclerview.addItemDecoration(MyDecoration(this))
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu_378, menu)
-        return super.onCreateOptionsMenu(menu)
-    }
-
-    class MyViewHolder(val binding: ItemRecyclerviewBinding): RecyclerView.ViewHolder(binding.root)
-
-    class MyAdapter(val datas: MutableList<String>): RecyclerView.Adapter<RecyclerView.ViewHolder>(){
-
-        override fun getItemCount(): Int{
-            return datas.size
-        }
-
-        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder
-                = MyViewHolder(ItemRecyclerviewBinding.inflate(LayoutInflater.from(parent.context), parent, false))
-
-        override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-            val binding=(holder as MyViewHolder).binding
-            binding.itemData.text= datas[position]
-        }
-    }
-
-    class MyDecoration(val context: Context): RecyclerView.ItemDecoration() {
-
-        override fun getItemOffsets(
-            outRect: Rect,
-            view: View,
-            parent: RecyclerView,
-            state: RecyclerView.State
-        ) {
-            super.getItemOffsets(outRect, view, parent, state)
-            val index = parent.getChildAdapterPosition(view) + 1
-
-            if (index % 3 == 0) //left, top, right, bottom
-                outRect.set(10, 10, 10, 60)
-            else
-                outRect.set(10, 10, 10, 0)
-
-            view.setBackgroundColor(Color.parseColor("#28A0FF"))
-            ViewCompat.setElevation(view, 20.0f)
-
-        }
+        binding.recyclerview.layoutManager = layoutManager
+        val adapter = MyAdapter(datas)
+        binding.recyclerview.adapter = adapter
+        binding.recyclerview.addItemDecoration(Recycle2Activity.MyDecoration(this))
     }
 }

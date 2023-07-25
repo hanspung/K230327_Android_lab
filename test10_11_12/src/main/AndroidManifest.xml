@@ -14,6 +14,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.K230327_Android_lab">
         <activity
+            android:name=".test12.MainActivity389"
+            android:exported="true" />
+        <activity
+            android:name=".test12.MainActivity388"
+            android:exported="true" />
+        <activity
+            android:name=".test12.MainActivity385"
+            android:exported="true" />
+        <activity
+            android:name=".test12.MainActivity384"
+            android:exported="true" />
+        <activity
             android:name=".test12.MainActivity378"
             android:exported="true" />
         <activity
@@ -29,7 +41,7 @@
             android:name=".test11.ViewPager2_Recycle_Activity"
             android:exported="true" />
         <activity
-            android:name=".test11.RecycleActivity2"
+            android:name=".test11.Recycle2Activity"
             android:exported="true" />
         <activity
             android:name=".adapter.MyAdapter"
